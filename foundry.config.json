@@ -1,0 +1,11 @@
+{
+  "foundryUrl": "https://devcon-ruby-cache.palantirfoundry.com",
+  "site": {
+    "application": "ri.third-party-applications.main.application.45e68e05-639e-49c5-b242-013bba975805",
+    "directory": "./dist",
+    "autoVersion": {
+      "type": "git-describe",
+      "tagPrefix": ""
+    }
+  }
+}
