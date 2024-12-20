@@ -85,4 +85,14 @@ Dive deeper into Palantir Foundry:
 - 📖 [Foundry Documentation](https://www.palantir.com/docs/foundry/)
 - 🔧 [OSDK Documentation](https://www.palantir.com/docs/foundry/ontology-sdk/overview/)
 
-Happy whale tracking! 🐋✨
+### Happy whale tracking! 🐋✨
+
+Data sources:
+https://seamap.env.duke.edu/dataset/list
+
+Data Credits:
+🐳 https://instagram.com/happywhale_official/
+🦈 https://x.com/obisnetwork
+
+Video Walkthrough:
+https://x.com/serknight_/status/1858900717462806582/video/1
