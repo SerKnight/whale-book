@@ -1,98 +1,100 @@
-# 🐋 WhaleTail
+# WhaleTail 🐋
 
-Welcome to WhaleTail! A delightful whale tracking application built during the first Palantir Foundry DevCon. We help track and visualize whale migration patterns using Foundry's data platform and OSDK (Ontology SDK). 
+A Palantir Foundry application for tracking and visualizing whale migration patterns using the Ontology SDK (OSDK). Built during the first Foundry DevCon.
 
-## 🚀 Quick Start
+## Prerequisites
 
-### 1. Set Up NPM Registry 🛠️
+- Node.js (v18+)
+- Palantir Foundry instance with appropriate access
+- Mapbox account (free tier works)
+- NPM registry access to Foundry artifacts
 
-First, let's configure your NPM registry access. Export your Foundry token:
+## Installation
+
+1. Configure NPM registry:
 ```bash
-export FOUNDRY_TOKEN='your-token-here'
-```
-
-Add these lines to your `.npmrc`:
-```bash
+# Add to .npmrc
 //<instance-artifact-registry>:_authToken=${FOUNDRY_TOKEN}
 @whaletail:registry=<instance-artifact-registry>
 ```
 
-### 2. Install Dependencies 📦
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### 3. Configure Environment 🌊
-
-Copy our example environment file:
+3. Set up environment:
 ```bash
 cp .env.example .env.development
 ```
 
-Update `.env.development` with your details:
+4. Configure your `.env.development`:
 ```bash
-# 🏢 Foundry Configuration
+# Foundry Configuration
 VITE_FOUNDRY_API_URL=https://<your-foundry-instance>.palantirfoundry.com
 VITE_FOUNDRY_CLIENT_ID=<your-oauth-client-id>
 
-# 🔐 OAuth Configuration
+# OAuth Configuration
 VITE_FOUNDRY_REDIRECT_URL=http://localhost:8080/auth/callback
 VITE_FOUNDRY_REDIRECT_URL_PROD=https://<your-domain>/auth/callback
 
-# 🗺️ Map Visualization
-VITE_MAPBOX_TOKEN=<your-mapbox-token> # free mapbox account required
+# Mapbox Configuration
+VITE_MAPBOX_TOKEN=<your-mapbox-token>
 ```
 
-### 4. Launch the App 🚀
+5. Start the development server:
 ```bash
 npm run dev
 ```
 
-Visit `http://localhost:8080` to see your whales! 🐳
+## Foundry Requirements
 
-## 🏗️ Architecture
+### Required Resources
+1. **Pipeline**: `whale_data` for processing sighting data
+2. **Ontology Objects**:
+   - `Whales`: Profile management
+   - `WhaleActivity`: Sighting tracking
+3. **AIP Function**: `getWhale`
+4. **OSDK Resources**:
+   - Objects: `Whale`, `WhaleActivity`
+   - Actions: `CreateWhaleActivity`
+   - Functions: `getWhale`
 
-### Frontend Technologies
-- ⚛️ React + TypeScript (built with Vite)
-- 🗺️ MapboxGL for beautiful migration visualization
-- 💅 Tailwind CSS for styling
+## Development
 
-### Foundry Backend Requirements
+```bash
+# Local development
+npm run dev
 
-#### 1. Pipeline Builder 🔄
-- `whale_data` pipeline for processing open source whale sighting data
+# Code Workspaces development
+npm run dev:remote
+```
 
-#### 2. Ontology Objects 🐋
-- `Whales`: Core profiles
-- `WhaleActivity`: Sighting tracking
-- Associated links and actions
+## Tech Stack
 
-#### 3. AIP (Artificial Intelligence Platform) 🧠
-- `getWhale` function for data processing
+- Frontend: React, TypeScript, Vite
+- Visualization: MapboxGL
+- Styling: TailwindCSS
+- Backend: Palantir Foundry OSDK
 
-#### 4. OSDK Resources 📦
-- Object Types:
-  - `Whale`
-  - `WhaleActivity`
-- Action Types:
-  - `CreateWhaleActivity`
-- Functions:
-  - `getWhale`
+## Data Sources
 
-## 📚 Learn More
+- [SEAMAP Duke](https://seamap.env.duke.edu/dataset/list)
+- [HappyWhale](https://instagram.com/happywhale_official)
+- [OBIS Network](https://x.com/obisnetwork)
 
-Dive deeper into Palantir Foundry:
-- 📖 [Foundry Documentation](https://www.palantir.com/docs/foundry/)
-- 🔧 [OSDK Documentation](https://www.palantir.com/docs/foundry/ontology-sdk/overview/)
+## Demo
 
-### Happy whale tracking! 🐋✨
+See it in action: [Video Walkthrough](https://x.com/serknight_/status/1858900717462806582/video/1)
 
-Data sources:
-https://seamap.env.duke.edu/dataset/list
+## Documentation
 
-Data Credits:
-🐳 https://instagram.com/happywhale_official/
-🦈 https://x.com/obisnetwork
+- [Palantir Foundry Docs](https://www.palantir.com/docs/foundry/)
+- [OSDK Documentation](https://www.palantir.com/docs/foundry/ontology-sdk/overview/)
 
-Video Walkthrough:
-https://x.com/serknight_/status/1858900717462806582/video/1
+## License
+
+[Add your license here]
+
+---
+Built with 🐋 during Palantir Foundry DevCon
